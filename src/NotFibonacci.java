@@ -5,11 +5,11 @@ public class NotFibonacci {
         long[]sequence = new long[n];
 
         sequence[0] = 0;
-        sequence[1] = 1;
+        sequence[1] = 2; //1 did not produce the correct output
 
         for (int i = 2; i < n; ++i) { //starting at i = 2 produces n-2 terms because the first 2 terms are already declared
 
-            double newTerm = (3 * sequence[i-1]) + (2 * sequence[i-2]);
+            double newTerm = (1.5 * sequence[i-1]) + (2 * sequence[i-2]);
             sequence[i] = (long) Math.floor(newTerm);
         }
 
@@ -17,7 +17,7 @@ public class NotFibonacci {
     }
 
     public static void main(String[] args) {
-        int n = 1200; // Number of terms
+        int n = 10; // Number of terms
 
         long[] result = NotFibonacci.notFibonacci(n);
 
